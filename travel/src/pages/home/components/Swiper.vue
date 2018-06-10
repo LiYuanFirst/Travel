@@ -21,10 +21,10 @@ export default {
   data () {
     return {
       swiperOption: {
-          pagination: '.swiper-pagination',
-          loop:true,
-          autoplay:5000
-        }
+        pagination: '.swiper-pagination',
+        loop:true,
+        autoplay:5000
+      }
     }
   }
 }
