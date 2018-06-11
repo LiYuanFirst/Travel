@@ -51,9 +51,9 @@ export default {
 <style lang="stylus" scoped>
   @import "~styles/mixins.styl"
   .icons >>> .swiper-container
-    padding-bottom: .28rem
+    padding-bottom: .32rem
     .swiper-pagination-bullets
-      bottom: 0
+      bottom: .04rem
   .icons
     padding-top: .1rem
     overflow: hidden
