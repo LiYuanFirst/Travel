@@ -55,6 +55,7 @@ export default {
     .swiper-pagination-bullets
       bottom: 0
   .icons
+    padding-top: .1rem
     overflow: hidden
     .icon
       width: 25%
