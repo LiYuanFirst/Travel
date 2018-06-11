@@ -4,7 +4,7 @@
       <swiper-slide v-for="(page,index) of pages" :key="index">
         <div class="icon" v-for="(item,index2) of page" :key="index2">
           <div class="icon-img">
-            <img class="img" :src="item.src" alt="">
+            <img class="img" :src="item.imgUrl" alt="">
           </div>
           <p class="des" v-text="item.desc"></p>
         </div>
@@ -20,64 +20,20 @@
 <script>
 export default {
   name:'HomeIcon',
+  props:{
+    list:Array
+  },
   data () {
     return{
       swiperOption: {
         pagination: '.swiper-pagination'
-      },
-      iconsList:[
-        {
-          id:1,
-          src:"http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-          desc:'景点门票'
-        },
-        {
-          id:2,
-          src:"http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png",
-          desc:'一日游'
-        },
-        {
-          id:3,
-          src:"http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png",
-          desc:'必游榜单'
-        },
-        {
-          id:4,
-          src:"http://img1.qunarzz.com/piao/fusion/1803/bd/9f7b9b2b60c1502.png",
-          desc:'动植物园'
-        },
-        {
-          id:5,
-          src:"http://img1.qunarzz.com/piao/fusion/1803/bd/9f7b9b2b60c1502.png",
-          desc:'踏青赏花'
-        },
-        {
-          id:6,
-          src:"http://img1.qunarzz.com/piao/fusion/1805/57/1e29afd06f881102.png",
-          desc:'普陀山'
-        },
-        {
-          id:7,
-          src:"http://img1.qunarzz.com/piao/fusion/1803/b1/528a9e80403b8c02.png",
-          desc:'上海欢乐谷'
-        },
-        {
-          id:1,
-          src:"http://img1.qunarzz.com/piao/fusion/1804/ed/cf572be30fc32f02.png",
-          desc:'Q精选'
-        },
-        {
-          id:1,
-          src:"http://img1.qunarzz.com/piao/fusion/1803/de/f26be47a6bf02a02.png",
-          desc:'上海迪士尼'
-        }
-      ]
+      }
     }
   },
   computed:{
     pages () {
       const pages = []
-      this.iconsList.forEach((item,index) => {
+      this.list.forEach((item,index) => {
         const page = Math.floor(index/8)
         if(!pages[page]){
           pages[page] = []

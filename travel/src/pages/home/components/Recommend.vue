@@ -4,8 +4,8 @@
       猜你喜欢
     </div>
     <div class="con">
-      <div class="item" v-for="(item,index) of recommendList" :key="item.id">
-        <img class="item-img" :src="item.src" alt="">
+      <div class="item" v-for="(item,index) of list" :key="item.id">
+        <img class="item-img" :src="item.imgUrl" alt="">
         <div class="item-info">
           <h4 class="item-title">{{item.title}}</h4>
           <p class="item-desc">{{item.desc}}</p>
@@ -19,31 +19,12 @@
 <script>
 export default {
   name: 'HomeRecommend',
+  props:{
+    list:Array
+  },
   data () {
     return {
-      recommendList:[
-        {
-          id:1,
-          title:'上海玛雅海滩水公园',
-          desc:'上海玛雅海滩水公园上海玛雅海滩水公园',
-          src:'http://img1.qunarzz.com/sight/p0/1506/30/7a528fae12c17e6e29d5d13a9d9813ee.water.jpg_200x200_e7f0d0ad.jpg'
-        },{
-          id:2,
-          title:'上海迪士尼乐园',
-          desc:'上海玛雅海滩水公园上海玛雅海滩水公园',
-          src:'http://img1.qunarzz.com/sight/p0/1506/30/7a528fae12c17e6e29d5d13a9d9813ee.water.jpg_200x200_e7f0d0ad.jpg'
-        },{
-          id:3,
-          title:'上海玛雅海滩水公园',
-          desc:'上海玛雅海滩水公园上海玛雅海滩水公园',
-          src:'http://img1.qunarzz.com/sight/p0/1506/30/7a528fae12c17e6e29d5d13a9d9813ee.water.jpg_200x200_e7f0d0ad.jpg'
-        },{
-          id:4,
-          title:'上海玛雅海滩水公园',
-          desc:'上海玛雅海滩水公园上海玛雅海滩水公园',
-          src:'http://img1.qunarzz.com/sight/p0/1506/30/7a528fae12c17e6e29d5d13a9d9813ee.water.jpg_200x200_e7f0d0ad.jpg'
-        }
-      ]
+    
     }
   }
 }
