@@ -40,6 +40,7 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 import BScroll from 'better-scroll'
 export default {
   name:'CityList',
@@ -53,9 +54,15 @@ export default {
   },
   methods:{
     handleCityCity (city) {
-      this.$store.dispatch('changeCity',city)
+      this.$store.commit('changeCity',city)
       this.$router.push('/')
     }
+  },
+  mounted:function(){
+    console.log(mapState)
+  },
+  computed: {
+    ...mapState(['city'])
   },
   watch:{
     letter () {
