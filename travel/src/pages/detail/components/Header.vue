@@ -8,7 +8,7 @@
         <span class="iconfont">&#xe624;</span>
       </router-link>
       <div class="text">
-        景点名称
+        {{sightname}}
       </div>
     </div>
 
@@ -18,6 +18,9 @@
 <script>
 export default {
   name:"DetailHeader",
+  props:{
+    sightname:String
+  },
   data(){
     return {
       showHeader : true,
@@ -30,6 +33,7 @@ export default {
     handleScroll(){
       //获取scrollTop兼容写法
       const top = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+
       if(top>60){
         let opacity = top/140
         opacity = opacity > 1 ? 1 : opacity
@@ -42,6 +46,8 @@ export default {
   },
   activated(){
     window.addEventListener('scroll',this.handleScroll)
+
+
   },
   deactivated(){
     window.removeEventListener('scroll',this.handleScroll)
@@ -57,7 +63,7 @@ export default {
     left: 0
     right: 0
     height: .86rem
-    z-index: 1
+    z-index: 5
     text-align: center
     .back1
       position: absolute
@@ -88,8 +94,8 @@ export default {
         height: .72rem
         line-height: .72rem
         margin: .07rem
-        
-      
-    
-  
+        color: #fff
+
+
+
 </style>

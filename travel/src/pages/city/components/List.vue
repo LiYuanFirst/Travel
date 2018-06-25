@@ -58,9 +58,7 @@ export default {
       this.$router.push('/')
     },
     ...mapMutations(['changeCity'])
-    
-  },
-  mounted:function(){
+
   },
   computed: {
     ...mapState({
@@ -69,7 +67,6 @@ export default {
   },
   watch:{
     letter () {
-      console.log(this.letter)
       const element = this.$refs[this.letter][0]
       if(this.letter){
         this.scroll.scrollToElement(element)

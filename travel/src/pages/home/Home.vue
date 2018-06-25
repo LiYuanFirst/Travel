@@ -52,6 +52,7 @@ export default {
         this.weekendList = data.weekendList
       }
     }
+
   },
   mounted(){
     this.lastCity = this.city
@@ -62,7 +63,11 @@ export default {
       this.lastCity = this.city
       this.getHomeInfo()
     }
+  },
+  deactivated(){
+    window.removeEventListener('scroll', this.handleScroll);
   }
+
 }
 </script>
 
