@@ -38,7 +38,6 @@ export default {
     },
     getDataSucc(res){
       res = res.data
-      console.log(res)
       if(res.ret && res.data){
         this.sightName = res.data.sightName
         this.bannerImg = res.data.bannerImg
